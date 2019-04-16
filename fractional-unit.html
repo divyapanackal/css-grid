@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>::GRID::</title>
+    <link href="https://fonts.googleapis.com/css?family=Sniglet:400,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Candal" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> </head>
+    <style type="text/css">
+    /*FRACTIONAL UNIT*/
+.grid,
+.grid-gc {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-column-gap: 10px;
+    grid-template-rows: 100px;
+    margin: 0;
+}
+
+.grid-gc {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.column {
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 20%;
+    height: 190px;
+}
+
+.fr-unit-code {
+    list-style-type: disc;
+    /* padding-left: 20px; */
+    list-style-position: outside;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1e2227;
+}</style>
+
+<body>
+    <header id="header">
+        <div class="menu-toggle">
+            <div class="hamburger"> <span></span> <span></span> <span></span> </div>
+            <div class="cross"> <span></span> <span></span> </div>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Basic layout</a></li>
+                <li><a href="grid-struct.html">Grid layout</a></li>
+                <li><a href="grid-explicit-implicit.html">Explicit vs Implicit Grid</a></li>
+                <li><a href="fractional-unit.html">Fractional unit</a></li>
+                <li><a href="full.html">Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="sub-main" style="    width: calc(100% - 50px);padding-bottom: 5rem;">
+        <div class="top-header">
+            <h2>Fractional unit - 'fr'</h2>
+        </div>
+        <div class="g-container grid-style clr-white">
+            <div class="g-head">
+                <p>Represents a fraction of the leftover space in the grid container.</p>
+                <p>1 Fr = 1 part of available space.</p>
+            </div>
+            <div class="g-container-left border">
+                <h3>Code</h2>
+                    <div class="fr-unit-code">
+                        <div>.grid { </div>
+                        <div> display: grid;</div>
+                        <div> grid-template-columns: repeat(4, 25%); </div>
+                        <div> grid-column-gap: 10px; </div>
+                        <div> grid-template-rows: 100px; </div>
+                        <div> margin: 0;</div>
+                        <div> }</div>
+                    </div>
+            </div>
+            <div class="g-container-right border">
+                <div class="grid">
+                    <div class="column">1</div>
+                    <div class="column">2</div>
+                    <div class="column">3</div>
+                    <div class="column">4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="main">
+        <div class="g-container grid-style clr-white">
+            <div class="g-container-left border">
+                <h3>Code</h2>
+                    <div class="fr-unit-code">
+                        <div>.grid { </div>
+                        <div> display: grid;</div>
+                        <div> grid-template-columns: repeat(4, 1fr); </div>
+                        <div> grid-column-gap: 10px; </div>
+                        <div> grid-template-rows: 100px; </div>
+                        <div> margin: 0;</div>
+                        <div> }</div>
+                    </div>
+            </div>
+            <div class="g-container-right border">
+                <div class="grid-gc">
+                    <div class="column column1">1</div>
+                    <div class="column column2">2</div>
+                    <div class="column column3">3</div>
+                    <div class="column column4">4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
